@@ -1,0 +1,11 @@
+ONLINE DEPLOYMENT CHECKLIST
+
+Recommended first host: Streamlit Community Cloud.
+1. Create a GitHub repository.
+2. Upload streamlit_app.py, requirements.txt, README.md, and .streamlit/config.toml.
+3. In Streamlit Community Cloud, create an app from the repository with main file streamlit_app.py.
+4. Wait for first build/model download.
+5. Test with a small image ZIP and an optional CVAT XML.
+6. Verify all output types and download ZIP before processing a large dataset.
+
+For large datasets or frequent use, choose a host with more RAM/CPU or GPU support. Streamlit Community Cloud may not be suitable for large workloads due to resource/time limits.
