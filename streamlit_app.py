@@ -141,7 +141,7 @@ if run:
     try:
         with st.status("Preparing uploaded files...", expanded=True) as status:
             images_zip.seek(0)
-extract_zip(images_zip, input_dir)
+            extract_zip(images_zip, input_dir)
             image_paths = sorted(p for p in Path(input_dir).rglob('*') if p.is_file() and p.suffix.lower() in IMAGE_EXTS)
             if not image_paths:
                 raise ValueError("No supported images were found in the uploaded ZIP.")
@@ -156,7 +156,7 @@ extract_zip(images_zip, input_dir)
                         f.write(annotations_upload.getvalue())
                 else:
                     annotations_upload.seek(0)
-extract_zip(annotations_upload, ann_dir)
+                    extract_zip(annotations_upload, ann_dir)
                     xmls = list(Path(ann_dir).rglob('*.xml'))
                     if not xmls:
                         raise ValueError("The annotation ZIP did not contain an XML file.")
